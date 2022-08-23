@@ -42,6 +42,7 @@ main {
     transition-duration: 0.4s;
     cursor: pointer;
     background-color: bisque;
+    border-radius: 15px;
 }
 
 .buttonKaksi {
@@ -76,6 +77,5 @@ main {
 
 #klikkausVoimaAlue {
     border: 5px solid black;
-    border-radius: 15px;
     background-color: bisque;
 }
