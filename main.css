@@ -34,7 +34,7 @@ main {
 
 .button {
     border: none;
-    padding: 16px 32px;
+    padding: auto;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -48,7 +48,7 @@ main {
     border:none;
     text-align: center;
     text-decoration: none;
-    font-size: 100%;
+    font-size: 75%;
     cursor: pointer;
     background-color: bisque;
 }
