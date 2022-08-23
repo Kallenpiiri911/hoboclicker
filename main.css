@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    line-height: 1.5;
+    letter-spacing: 0.009375rem;
+    padding: 0;
+    overflow-y: scroll;
+    text-align: center;
+    font-size: 150%;
+    background-color: gray;
+}
+main {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    max-width: 832px;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+#nappi {
+    background-image: url("kuva.jpg");
+    height: 200px;
+    width: auto;
+    border: 5px solid black;
+    border-radius: 40px;
+}
+
+.button {
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 150%;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: bisque;
+}
+
+.buttonKaksi {
+    border:none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 100%;
+    cursor: pointer;
+    background-color: bisque;
+}
+
+#piste {
+    font-size: 125%;
+    background-color:antiquewhite;
+    border-radius: 25px;
+    border: 5px solid black
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: auto;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#klikkausVoimaAlue {
+    border: 5px solid black;
+    border-radius: 15px;
+    background-color: bisque;
+}
