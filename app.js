@@ -1,30 +1,31 @@
-let pisteet = 0
+let pisteet = 0 // Pisteet = Kalja
+
+// Alustava hinnasto
 let hoboJuomaHinta = 10
 let kelaTuetHinta = 50
-
 let klikkausBoosterHinta = 100
 let klikkausBoosterMegaHinta = 200
 let klikkausBoosterExtremeHinta = 500
 let klikkausBoosterXtremeHinta = 1000
 
-let klikkausVoima = 1
+let klikkausVoima = 1 // Alustava määrä paljon kaljaa saa per klikkaus
 
-let pisteitaSekunnissa = 0
-setInterval(naytaPisteet, 1);
+let pisteitaSekunnissa = 0 // Muuttuja johon tallennetaan monta kaljaa sekunnissa tuotetaan
 
-function klikkaus() {
+setInterval(naytaPisteet, 1); // Päivittää pistemäätän joka millisekunnin välein
+
+function klikkaus() { // Funktio käynnistyy hobon klikkaamisella
     pisteet = pisteet + klikkausVoima
-    naytaPisteet()
-    document.getElementById("virheTeksti").innerHTML = "";
+    document.getElementById("virheTeksti").innerHTML = ""; // Alustaa virhetekstin
 }
 
-function hoboJuoma() {
-    if (pisteet >= hoboJuomaHinta) {
+function hoboJuoma() { // Funktio jos käyttäjä ostaa Hobo Juoman
+    if (pisteet >= hoboJuomaHinta) { // Tarkistaa onko kaljaa riittävästi
         pisteet = pisteet - hoboJuomaHinta
         hoboJuomaHinta = hoboJuomaHinta + 10
         pisteitaSekunnissa = pisteitaSekunnissa + 1
         lisaaHoboJuomaPisteet()
-        setInterval(lisaaHoboJuomaPisteet, 1000);
+        setInterval(lisaaHoboJuomaPisteet, 1000); // Laukaisee funktion joka sekunnin välein
         document.getElementById("virheTeksti").innerHTML = ""
     } else {
         document.getElementById("virheTeksti").innerHTML = "Ei riittävästi kaljaa"
@@ -50,14 +51,15 @@ function lisaaKelaTuetPisteet() {
     pisteet = pisteet + 5
 }
 
+// Klikkaus boosterit
 function klikkausBooster() {
-    if (pisteet >= klikkausBoosterHinta) {
+    if (pisteet >= klikkausBoosterHinta) { // Tarkistaa että kaljaa (pisteitä) on riittävästi
         pisteet = pisteet - klikkausBoosterHinta
         klikkausBoosterHinta = klikkausBoosterHinta + 100
         klikkausVoima = klikkausVoima + 1
     }
 }
-function klikkausBoosterMega() {
+function klikkausBoosterMega() { // 200 Kaljaa
     if (pisteet >= klikkausBoosterMegaHinta) {
         pisteet = pisteet - klikkausBoosterMegaHinta
         klikkausBoosterMegaHinta = klikkausBoosterMegaHinta + 200
@@ -79,7 +81,7 @@ function klikkausBoosterXtreme() { // 1000 kaljaa
     }
 }
 
-function naytaPisteet() {
+function naytaPisteet() { // Funktio joka päivittää tiedot millisekunnin välein
     document.getElementById("klikkausTeho").innerHTML = "KlikkausTeho: " + klikkausVoima + " kaljaa per klikkaus" 
     document.getElementById("piste").innerHTML = pisteet + " kaljaa"
     document.getElementById("pisteetSekunnis").innerHTML = pisteitaSekunnissa + " kaljaa sekunnissa"
