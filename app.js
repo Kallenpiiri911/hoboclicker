@@ -3,6 +3,7 @@ let pisteet = 0 // Pisteet = Kalja
 // Alustava hinnasto
 let hoboJuomaHinta = 10
 let kelaTuetHinta = 50
+let kaljarekkaHinta = 250
 let klikkausBoosterHinta = 100
 let klikkausBoosterMegaHinta = 200
 let klikkausBoosterExtremeHinta = 500
@@ -51,6 +52,33 @@ function lisaaKelaTuetPisteet() {
     pisteet = pisteet + 5
 }
 
+function kaljaRekka() { // 250
+    if (pisteet >= kaljarekkaHinta) {
+        pisteet = pisteet - kaljarekkaHinta
+        kaljarekkaHinta = kaljarekkaHinta + 250
+        pisteitaSekunnissa = pisteitaSekunnissa + 25
+        lisaaKaljaRekkaPisteet()
+        setInterval(lisaaKaljaRekkaPisteet, 1000);
+        document.getElementById("viheTeksti").innerHTML = ""
+    } else {
+        document.getElementById("virheTeksti").innerHTML = "Ei riittävästi kaljaa"
+    }
+}
+function lisaaKaljaRekkaPisteet() {
+    pisteet = pisteet + 25
+}
+
+
+
+
+
+
+
+
+
+
+
+
 // Klikkaus boosterit
 function klikkausBooster() {
     if (pisteet >= klikkausBoosterHinta) { // Tarkistaa että kaljaa (pisteitä) on riittävästi
@@ -82,13 +110,14 @@ function klikkausBoosterXtreme() { // 1000 kaljaa
 }
 
 function naytaPisteet() { // Funktio joka päivittää tiedot millisekunnin välein
-    document.getElementById("klikkausTeho").innerHTML = "KlikkausTeho: " + klikkausVoima + " kaljaa per klikkaus" 
+    document.getElementById("klikkausTeho").innerHTML = "KlikkausTeho: " + klikkausVoima
     document.getElementById("piste").innerHTML = pisteet + " kaljaa"
-    document.getElementById("pisteetSekunnis").innerHTML = pisteitaSekunnissa + " kaljaa sekunnissa"
+    document.getElementById("pisteetSekunnis").innerHTML = pisteitaSekunnissa + " kaljaa /s"
     document.getElementById("hoboJuomaHintaNosto").innerHTML = "Hobo juoma " + hoboJuomaHinta + " kaljaa (+1 kalja / s)"
     document.getElementById("kelaTuetHintaNosto").innerHTML = "Kela tuet " + kelaTuetHinta + " kaljaa (+5 kaljaa / s)"
-    document.getElementById("klikkausBoosteriHintaNosto").innerHTML = "Klikkaus Booster " + klikkausBoosterHinta + " kaljaa"
-    document.getElementById("klikkausBoosteriMegaHintaNosto").innerHTML = "Klikkaus Booster Mega " + klikkausBoosterMegaHinta + " kaljaa"
-    document.getElementById("klikkausBoosteriExtremeHintaNosto").innerHTML = "Klikkaus Booster Extreme " + klikkausBoosterExtremeHinta + " kaljaa"
-    document.getElementById("klikkausBoosteriXXXTREMEHintaNosto").innerHTML = "Klikkaus Booster XXXTreme " + klikkausBoosterXtremeHinta + " kaljaa"
+    document.getElementById("kaljaRekkaHintaNosto").innerHTML = "Kalja rekka " + kaljarekkaHinta + " kaljaa (+25 kaljaa / s)"
+    document.getElementById("klikkausBoosteriHintaNosto").innerHTML = "Klikkaus Booster <br>" + klikkausBoosterHinta + " kaljaa"
+    document.getElementById("klikkausBoosteriMegaHintaNosto").innerHTML = "Klikkaus Booster Mega <br>" + klikkausBoosterMegaHinta + " kaljaa"
+    document.getElementById("klikkausBoosteriExtremeHintaNosto").innerHTML = "Klikkaus Booster Extreme <br>" + klikkausBoosterExtremeHinta + " kaljaa"
+    document.getElementById("klikkausBoosteriXXXTREMEHintaNosto").innerHTML = "Klikkaus Booster XXXTreme <br>"  + klikkausBoosterXtremeHinta + " kaljaa"
 }

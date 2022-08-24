@@ -17,7 +17,7 @@ main {
     margin-left: auto;
     margin-right: auto;
     padding: 1em;
-    max-width: 832px;
+    max-width: 1000px;
     min-width: 0;
     width: 100%;
     box-sizing: border-box;
@@ -54,8 +54,8 @@ main {
     background-color: bisque;
 }
 
-#piste {
-    font-size: 125%;
+#tilastot {
+    font-size: 100%;
     background-color:antiquewhite;
     border-radius: 25px;
     border: 5px solid black

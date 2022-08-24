@@ -8,14 +8,24 @@
 <body>
 <main>
 
-<p id="pisteetSekunnis"></p>
+
+<div class="row">
+    <div id="tilastot" class="column">
+        <p id="pisteetSekunnis"></p>
+    </div>
+    <div id="tilastot" class="column">
+        <p id="piste"></p>
+    </div>
+    <div id="tilastot" class="column">
+        <p id="klikkausTeho"></p>
+    </div>
+</div>
+
 
 <article id="nappi" onclick="klikkaus()">
 </article>
 
 <p id="virheTeksti"></p>
-<p id="piste"></p>
-<p id="klikkausTeho"></p>
 
 <article id="klikkausVoimaAlue">
 <div class="row">
@@ -39,9 +49,10 @@
 <button class="button" id="hoboJuomaHintaNosto" onclick="hoboJuoma()"></button>
 <br><br>
 <button class="button" id="kelaTuetHintaNosto" onclick="kelaTuet()"></button>
+<br><br>
+<button class="button" id="kaljaRekkaHintaNosto" onclick="kaljaRekka()"></button>
 
 <br><br>
-
 <p><a href="https://github.com/Kallenpiiri911/hoboclicker/tree/main#readme">Versio 0.1</a></p>
 
 <script src="app.js"></script>
