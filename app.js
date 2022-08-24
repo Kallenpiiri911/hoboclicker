@@ -1,4 +1,12 @@
-let pisteet = 0 // Pisteet = Kalja
+let pisteet = 0
+
+pisteet = pisteet + localStorage.getItem('pisteet')
+
+pisteet = parseInt(pisteet);
+
+console.log(pisteet)
+
+setInterval(tallenna, 1000);
 
 // Alustava hinnasto
 let hoboJuomaHinta = 10
@@ -68,16 +76,9 @@ function lisaaKaljaRekkaPisteet() {
     pisteet = pisteet + 25
 }
 
-
-
-
-
-
-
-
-
-
-
+function tallenna() {
+    localStorage.setItem('pisteet', pisteet)
+}
 
 // Klikkaus boosterit
 function klikkausBooster() {
